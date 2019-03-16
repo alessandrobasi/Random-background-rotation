@@ -1,19 +1,52 @@
 <?php
+// 0 = Hide error   ||   1 = Show error ( hopefully no one )
+$ERROR = 0;
+ini_set('display_errors', $ERROR);
+ini_set('display_startup_errors', $ERROR);
+error_reporting(E_ALL);
 
+// This function return an array
+function get_img(){
+	
+	// Set the directory where the photos are
+	// "." same directory   ||   "/path/to/dir" specific directory from web root
+	// "path/to/dir" child directory
+	$directory = ".";
+	
+	// Set the extensions of the images
+	$extensions = ["png","jpg","jpeg"];
+    
+   	// Result array
+	$_array = array();
+	
+	foreach($extensions as $ext){
+		
+		$images = glob($directory . "/*." . $ext );
+		
+		foreach($images as $image) {
+			array_push($_array, $image);
+		}
+		
+	}
+	
+	// Return an array of string (file name)
+	return $_array;
+}
+
+// This function return a string (url)
 function random_img(){
-	$randurl = 
-	array("https://forum.gaming-italia.it/carosello/d023351cd802d65c50f0f5cfd372f297.jpg",
-    "https://forum.gaming-italia.it/carosello/computer-gaming-green-51415.jpg",
-    "https://forum.gaming-italia.it/carosello/mDqn5R0.jpg", 
-    "https://forum.gaming-italia.it/carosello/technology-joystick-controller-gadget-gaming-entertainment-568723-pxhere.com.jpg",
-    "https://forum.gaming-italia.it/carosello/light-controller-reflection-blue-circle-sphere-933936-pxhere.com.jpg",
-    "https://forum.gaming-italia.it/carosello/laptop-computer-keyboard-technology-red-equipment-644474-pxhere.com.jpg");
-
+	// Get array of images
+	$randurl = get_img();
+	
+	// Pick one random url form array
 	$random_url = array_rand($randurl,1);
 	
+	// Return picked url
 	return $randurl[$random_url];
 }
 
-header("location: ".random_img());
-die();
+// Redirect to the random url
+header("location: " . random_img() );
+exit();
+
 ?>
