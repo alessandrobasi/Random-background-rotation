@@ -14,13 +14,13 @@ bla bla bla...
   Login into your Xenforo admin interface
   Go to 
   
-  Example:
-  
 
 - HTML pages
   
   Insert in the body tag:
-  > <body **style="background: url(/path/to/dir/index.php) no-repeat fixed center; background-size: cover;"**>
+  ```
+  <body **style="background: url(/path/to/dir/index.php) no-repeat fixed center; background-size: cover;"**>
+  ```
   
 - CSS files
   
