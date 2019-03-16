@@ -12,8 +12,10 @@ bla bla bla...
 - Xenforo
 
   Login into your Xenforo admin interface
-  Go to 
   
+  go to *Appearance* and find the theme setting
+  
+  Change any background url reference with the url of the **index.php**
 
 - HTML pages
   
