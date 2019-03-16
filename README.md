@@ -15,7 +15,7 @@ bla bla bla...
   Go to 
   
   Example:
-  > http://example.com/.../index.php?text=__TEXT
+  
 
 - HTML pages
   
