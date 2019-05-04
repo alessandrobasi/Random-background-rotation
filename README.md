@@ -5,8 +5,7 @@ Random background rotation is a php script that returns a random image
 PHP >= 4.3
 
 ## Installation
-bla bla bla...
-
+Put **index.php** in a new web folder, put yout images in the same folder
 
 ## Uses
 - Xenforo
